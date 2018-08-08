@@ -1,7 +1,7 @@
-D:\2TDSJ\Fiap.HelloWorld\Fiap.Exercicio01.UI\obj\Debug\Fiap.Exercicio01.UI.csprojAssemblyReference.cache
-D:\2TDSJ\Fiap.HelloWorld\Fiap.Exercicio01.UI\obj\Debug\Fiap.Exercicio01.UI.csproj.CoreCompileInputs.cache
 D:\2TDSJ\Fiap.HelloWorld\Fiap.Exercicio01.UI\bin\Debug\Fiap.Exercicio01.UI.exe.config
 D:\2TDSJ\Fiap.HelloWorld\Fiap.Exercicio01.UI\bin\Debug\Fiap.Exercicio01.UI.exe
 D:\2TDSJ\Fiap.HelloWorld\Fiap.Exercicio01.UI\bin\Debug\Fiap.Exercicio01.UI.pdb
+D:\2TDSJ\Fiap.HelloWorld\Fiap.Exercicio01.UI\obj\Debug\Fiap.Exercicio01.UI.csprojAssemblyReference.cache
+D:\2TDSJ\Fiap.HelloWorld\Fiap.Exercicio01.UI\obj\Debug\Fiap.Exercicio01.UI.csproj.CoreCompileInputs.cache
 D:\2TDSJ\Fiap.HelloWorld\Fiap.Exercicio01.UI\obj\Debug\Fiap.Exercicio01.UI.exe
 D:\2TDSJ\Fiap.HelloWorld\Fiap.Exercicio01.UI\obj\Debug\Fiap.Exercicio01.UI.pdb

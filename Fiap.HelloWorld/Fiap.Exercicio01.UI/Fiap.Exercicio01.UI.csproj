@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A4679D4C-4DCF-48BF-8DD1-9E89BFF9766A}</ProjectGuid>
+    <ProjectGuid>{7A743914-ED60-4CD9-81BE-591262EEDC57}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Fiap.Exercicio01.UI</RootNamespace>
     <AssemblyName>Fiap.Exercicio01.UI</AssemblyName>
@@ -42,6 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Conta.cs" />
+    <Compile Include="Model\ContaCorrente.cs" />
+    <Compile Include="Model\ContaPoupanca.cs" />
+    <Compile Include="Model\IContaInvestimento.cs" />
     <Compile Include="Model\TipoConta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -49,6 +53,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

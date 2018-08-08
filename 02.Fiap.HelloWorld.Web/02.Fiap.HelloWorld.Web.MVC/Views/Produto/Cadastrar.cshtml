@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastro de Produto</h2>
+
+@ViewBag.nome
+@TempData["msg"]
+
+<form action="/Produto/Cadastrar" method="post">
+    <div class="form-group">
+        <label id="id-nome">Nome</label>
+        <input type="text" name="nome" id="id-nome" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="id-valor">Valor</label>
+        <input type="text" name="valor" id="id-valor" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <input type="checkbox" name="estoque" id="id-estoque" value="true"/>        
+        <label for="id-estoque">Estoque</label>
+    </div>
+    <div class="form-group">
+        <label for="id-qtd">Quantidade</label>
+        <select name="quantidade" id="id-qtd" class="form-control">
+            <option>5</option>
+            <option>10</option>
+            <option>15</option>
+        </select>
+    </div>
+    <input type="submit" value="Enviar" class="btn btn-primary" />
+</form>
+
