@@ -1,0 +1,36 @@
+﻿@model _03.Fiap.Web.MVC.Models.Item
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar</h2>
+
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(i => i.Nome)
+        @Html.TextBoxFor(i => i.Nome, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Quantidade)
+        @Html.TextBoxFor(a => a.Quantidade, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(i => i.Preco)
+        @Html.TextBoxFor(a => a.Preco, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(i => i.Descricao)
+        @Html.TextAreaFor(i => i.Descricao, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.CheckBoxFor(i => i.MaiorIdade)
+        @Html.LabelFor(i => i.MaiorIdade)
+    </div>
+    <input type="submit" value="OK" class="btn btn-primary"/>
+    @Html.ActionLink("Lista de Itens","Listar","Item")
+    @TempData["msg"]
+}
+
