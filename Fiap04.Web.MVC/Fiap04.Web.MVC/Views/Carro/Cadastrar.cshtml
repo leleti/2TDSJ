@@ -1,0 +1,31 @@
+﻿@model Fiap04.Web.MVC.Models.Carro
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar</h2>
+
+@Churros.Mensagem(TempData["msg"])
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(c => c.Marca)
+        @Html.DropDownListFor(c => c.Marca, ViewBag.marcas as SelectList,
+            new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Placa)
+        @Html.TextBoxFor(carro => carro.Placa, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.CheckBoxFor(c => c.ArCondicionado)
+        @Html.LabelFor(c => c.ArCondicionado)
+    </div>
+    @Churros.Submit("Cadastrar")
+}
+
+@section scripts{
+    <p>Scripts...</p>
+}

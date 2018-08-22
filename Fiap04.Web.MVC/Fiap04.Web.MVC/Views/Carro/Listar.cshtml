@@ -1,0 +1,19 @@
+﻿@model List<Fiap04.Web.MVC.Models.Carro>
+
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listar</h2>
+
+<table class="table">
+    <tr>
+        <th>Marca</th>
+        <th>Placa</th>
+        <th>Ar Condicionado</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+       @Html.Partial("_linhaTabela",item)
+    }
+</table>
