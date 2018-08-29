@@ -1,0 +1,32 @@
+﻿@model Fiap05.Web.MVC.Models.Livro
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastro de Livro</h2>
+
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["msg"]
+    </div>
+}
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(a => a.Titulo)
+        @Html.TextBoxFor(a => a.Titulo, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.DataCadastro)
+        @Html.TextBoxFor(a => a.DataCadastro, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.CheckBoxFor(a => a.Disponivel)
+        @Html.LabelFor(a => a.Disponivel)
+    </div>
+    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+}
+

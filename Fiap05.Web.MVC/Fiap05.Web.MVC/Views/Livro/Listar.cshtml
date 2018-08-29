@@ -1,0 +1,64 @@
+﻿@model List<Fiap05.Web.MVC.Models.Livro>
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listar</h2>
+
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["msg"]
+    </div>
+}
+
+<table class="table table-striped">
+    <tr>
+        <th>Código</th>
+        <th>Título</th>
+        <th>Data Cadastro</th>
+        <th>Disponível</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.LivroId</td>
+            <td>@item.Titulo</td>
+            <td>@item.DataCadastro</td>
+            <td>@item.Disponivel</td>
+            <td>
+                @Html.ActionLink("Alterar", "Editar", new { id = item.LivroId }, 
+                    new { @class = "btn btn-info btn-xs" })
+                <!-- Button trigger modal -->
+                <button onclick="codigoLivro.value = @item.LivroId" type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal">
+                    Remover
+                </button>
+            </td>
+        </tr>
+    }
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Confirmação</h4>
+            </div>
+            <div class="modal-body">
+                Tem certeza que você deseja apagar o livro?
+            </div>
+            <div class="modal-footer">
+                @using (Html.BeginForm("Excluir","Livro"))
+                {
+                    <input type="hidden" name="id" id="codigoLivro" />
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-danger">Excluir</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
