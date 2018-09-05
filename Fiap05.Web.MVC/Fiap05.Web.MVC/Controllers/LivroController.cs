@@ -13,6 +13,15 @@ namespace Fiap05.Web.MVC.Controllers
     {
         private BibliotecaContext _context = new BibliotecaContext();
 
+        [HttpGet]
+        public ActionResult Buscar(string tituloBusca)
+        {
+            //Buscar os livros no banco de dados pelo título
+            var lista = _context.Livros.Where(t => t.Titulo.Contains(tituloBusca)).ToList();
+            //retornar a página com os livros
+            return View("Listar",lista);
+        }
+
         [HttpPost]
         public ActionResult Excluir(int id)
         {

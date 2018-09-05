@@ -12,6 +12,20 @@
     </div>
 }
 
+@using (Html.BeginForm("Buscar","Livro",FormMethod.Get, new { @class = "form-inline" }))
+{
+    <input type="search" name="tituloBusca" placeholder="Digite um título" class="form-control" />
+    <button type="submit" class="btn btn-success">
+        <span class="glyphicon glyphicon-search"></span>
+    </button>
+}
+<br />
+
+@if (!Model.Any())
+{
+    <p>Sem resultados</p>
+}
+
 <table class="table table-striped">
     <tr>
         <th>Código</th>
@@ -28,7 +42,7 @@
             <td>@item.DataCadastro</td>
             <td>@item.Disponivel</td>
             <td>
-                @Html.ActionLink("Alterar", "Editar", new { id = item.LivroId }, 
+                @Html.ActionLink("Alterar", "Editar", new { id = item.LivroId },
                     new { @class = "btn btn-info btn-xs" })
                 <!-- Button trigger modal -->
                 <button onclick="codigoLivro.value = @item.LivroId" type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal">
@@ -51,7 +65,7 @@
                 Tem certeza que você deseja apagar o livro?
             </div>
             <div class="modal-footer">
-                @using (Html.BeginForm("Excluir","Livro"))
+                @using (Html.BeginForm("Excluir", "Livro"))
                 {
                     <input type="hidden" name="id" id="codigoLivro" />
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
