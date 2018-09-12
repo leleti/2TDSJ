@@ -11,6 +11,8 @@ namespace Fiap06.Web.MVC.Models
         public string Nome { get; set; }
         public DateTime DataNascimento { get; set; }
 
+        public Posicao? Posicao { get; set; }
+
         //Relacionamentos
         public Time Time { get; set; }
         public int TimeId { get; set; }

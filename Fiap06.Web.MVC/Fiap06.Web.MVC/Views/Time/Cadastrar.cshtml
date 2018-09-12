@@ -1,0 +1,32 @@
+﻿@model Fiap06.Web.MVC.Models.Time
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastro de Time</h2>
+@Ajudante.Mensagem(TempData["msg"])
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(t => t.Nome)
+        @Html.TextBoxFor(t => t.Nome, new { @class= "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(t => t.Torcedores)
+        @Html.TextBoxFor(t => t.Torcedores, new { @class = "form-control"})
+    </div>
+    <fieldset>
+        <legend>Técnico</legend>
+        <div class="form-group">
+            @Html.LabelFor(t => t.Treinador.Nome)
+            @Html.TextBoxFor(t => t.Treinador.Nome, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(t => t.Treinador.Salario)
+            @Html.TextBoxFor(t => t.Treinador.Salario, new { @class = "form-control" })
+        </div>
+    </fieldset>
+    @Ajudante.Botao("Cadastrar")
+}

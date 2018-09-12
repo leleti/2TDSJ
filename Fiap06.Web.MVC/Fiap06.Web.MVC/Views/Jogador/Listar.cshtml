@@ -1,0 +1,33 @@
+﻿@model List<Fiap06.Web.MVC.Models.Jogador>
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Lista de Jogadores</h2>
+
+@using (Html.BeginForm("Buscar", "Jogador", 
+            FormMethod.Get, new { @class = "form-inline" }))
+{
+    @Html.DropDownList("Time", 
+        ViewBag.times as SelectList, "Selecione", new { @class = "form-control"})
+    @Ajudante.Botao("Buscar")
+}
+<br />
+<table class="table table-striped">
+    <tr>
+        <th>Nome</th>
+        <th>Data Nascimento</th>
+        <th>Posição</th>
+        <th>Time</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Nome</td>
+            <td>@item.DataNascimento.ToShortDateString()</td>
+            <td>@item.Posicao</td>
+            <td>@item.Time.Nome</td>
+        </tr>
+    }
+</table>
+

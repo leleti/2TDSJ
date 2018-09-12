@@ -13,7 +13,7 @@ namespace Fiap06.Web.MVC.Models
 
         //Relacionamentos
         public Treinador Treinador { get; set; }
-        public int TreinadorId { get; set; }
+        public int? TreinadorId { get; set; }
 
         public IList<Jogador> Jogadores { get; set; }
 
